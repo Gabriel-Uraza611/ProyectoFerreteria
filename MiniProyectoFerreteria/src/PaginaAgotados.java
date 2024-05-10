@@ -13,7 +13,7 @@ public class PaginaAgotados extends JPanel{
         bg.setBackground(new java.awt.Color(255, 254, 196));
 
         jLabel1.setFont(new java.awt.Font("Impact", 0, 48)); // NOI18N
-        jLabel1.setText("PAGINA AGREGAR");
+        jLabel1.setText("PAGINA AGOTADOS");
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
