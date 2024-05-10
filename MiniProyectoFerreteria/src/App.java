@@ -23,6 +23,10 @@ public class App  extends JFrame
 
     public App()
     {   
+        setTitle("Ferreteria: Mario & Luigy");
+        setLocation(360,70);
+        setResizable(false);
+        
         bg = new javax.swing.JPanel();
         panelTitulo = new javax.swing.JPanel();
         labelStar2 = new javax.swing.JLabel();
