@@ -1,4 +1,6 @@
 import javax.swing.JFrame;
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
 
 public class App  extends JFrame
 {   
@@ -21,7 +23,6 @@ public class App  extends JFrame
 
     public App()
     {   
-
         bg = new javax.swing.JPanel();
         panelTitulo = new javax.swing.JPanel();
         labelStar2 = new javax.swing.JLabel();
@@ -45,9 +46,9 @@ public class App  extends JFrame
         panelTitulo.setBackground(new java.awt.Color(225, 196, 255));
         panelTitulo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        labelStar2.setIcon(new javax.swing.ImageIcon("C:\\Users\\guraz\\OneDrive\\Escritorio\\ProyectoFerreteria\\AppEnJava\\src\\star.gif")); // NOI18N
+        labelStar2.setIcon(new javax.swing.ImageIcon("C:\\Users\\guraz\\OneDrive\\Escritorio\\ProyectoFerreteria\\MiniProyectoFerreteria\\src\\star.gif")); // NOI18N
 
-        labelStar1.setIcon(new javax.swing.ImageIcon("C:\\Users\\guraz\\OneDrive\\Escritorio\\ProyectoFerreteria\\AppEnJava\\src\\star.gif")); // NOI18N
+        labelStar1.setIcon(new javax.swing.ImageIcon("C:\\Users\\guraz\\OneDrive\\Escritorio\\ProyectoFerreteria\\MiniProyectoFerreteria\\src\\star.gif")); // NOI18N
 
         labelTitulo.setFont(new java.awt.Font("Impact", 0, 36)); // NOI18N
         labelTitulo.setText("FERRETERIA MARIO & LUIGY");
@@ -57,13 +58,13 @@ public class App  extends JFrame
         panelTituloLayout.setHorizontalGroup(
             panelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTituloLayout.createSequentialGroup()
-                .addGap(106, 106, 106)
+                .addGap(101, 101, 101)
                 .addComponent(labelStar1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(74, 74, 74)
                 .addComponent(labelTitulo)
-                .addGap(43, 43, 43)
-                .addComponent(labelStar2)
-                .addGap(108, 108, 108))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(labelStar2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52))
         );
         panelTituloLayout.setVerticalGroup(
             panelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -80,40 +81,75 @@ public class App  extends JFrame
         botonTodos.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         botonTodos.setText("TODOS");
         botonTodos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botonTodos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonTodosActionPerformed(evt);
+            }
+        });
 
         botonStock.setBackground(new java.awt.Color(255, 196, 226));
         botonStock.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         botonStock.setText("EN STOCK");
         botonStock.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botonStock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonStockActionPerformed(evt);
+            }
+        });
 
         botonAgotados.setBackground(new java.awt.Color(255, 196, 226));
         botonAgotados.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         botonAgotados.setText("AGOTADOS");
         botonAgotados.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botonAgotados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAgotadosActionPerformed(evt);
+            }
+        });
 
         botonAgregar.setBackground(new java.awt.Color(255, 196, 226));
         botonAgregar.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         botonAgregar.setText("AGREGAR");
         botonAgregar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botonAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAgregarActionPerformed(evt);
+            }
+        });
 
         botonEliminar.setBackground(new java.awt.Color(255, 196, 226));
         botonEliminar.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         botonEliminar.setText("ELIMINAR");
         botonEliminar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botonEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEliminarActionPerformed(evt);
+            }
+        });
 
         botonActualizar.setBackground(new java.awt.Color(255, 196, 226));
         botonActualizar.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         botonActualizar.setText("ACTUALIZAR");
         botonActualizar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botonActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonActualizarActionPerformed(evt);
+            }
+        });
 
         botonEstadisticas.setBackground(new java.awt.Color(255, 196, 226));
         botonEstadisticas.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         botonEstadisticas.setText("STATISTICS");
         botonEstadisticas.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        botonEstadisticas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonEstadisticasActionPerformed(evt);
+            }
+        });
 
-        labelMario.setIcon(new javax.swing.ImageIcon("C:\\Users\\guraz\\OneDrive\\Escritorio\\ProyectoFerreteria\\AppEnJava\\src\\luigy.gif")); // NOI18N
+        labelMario.setIcon(new javax.swing.ImageIcon("C:\\Users\\guraz\\OneDrive\\Escritorio\\ProyectoFerreteria\\MiniProyectoFerreteria\\src\\luigy.gif")); // NOI18N
 
-        labelLuigy.setIcon(new javax.swing.ImageIcon("C:\\Users\\guraz\\OneDrive\\Escritorio\\ProyectoFerreteria\\AppEnJava\\src\\mario.gif")); // NOI18N
+        labelLuigy.setIcon(new javax.swing.ImageIcon("C:\\Users\\guraz\\OneDrive\\Escritorio\\ProyectoFerreteria\\MiniProyectoFerreteria\\src\\mario.gif")); // NOI18N
 
         contenido.setBackground(new java.awt.Color(255, 254, 196));
         contenido.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -126,7 +162,7 @@ public class App  extends JFrame
         );
         contenidoLayout.setVerticalGroup(
             contenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 522, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
@@ -199,11 +235,100 @@ public class App  extends JFrame
         );
 
         pack();
+
+        PaginaTodos p = new PaginaTodos();
+        showPanel(p);
     }
 
     public static void main(String[] args) throws Exception
     {
         App app = new App();
         app.setVisible(true);
+    }
+
+    private void showPanel(JPanel p){
+        p.setSize(654, 528);
+        p.setLocation(0, 0);
+        
+        contenido.removeAll();
+        contenido.add(p, BorderLayout.CENTER);
+        contenido.revalidate();
+        contenido.repaint();
+    }
+    private void botonTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonTodosActionPerformed
+        PaginaTodos pT = new PaginaTodos();
+        pT.setSize(654, 528);
+        pT.setLocation(0, 0);
+        
+        contenido.removeAll();
+        contenido.add(pT, BorderLayout.CENTER);
+        contenido.revalidate();
+        contenido.repaint();
+    }//GEN-LAST:event_botonTodosActionPerformed
+
+    private void botonStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonStockActionPerformed
+        PaginaEnStock pS = new PaginaEnStock();
+        pS.setSize(654, 528);
+        pS.setLocation(0, 0);
+        
+        contenido.removeAll();
+        contenido.add(pS, BorderLayout.CENTER);
+        contenido.revalidate();
+        contenido.repaint();
+    }//GEN-LAST:event_botonStockActionPerformed
+
+    private void botonAgotadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgotadosActionPerformed
+        PaginaAgotados pA = new PaginaAgotados();
+        pA.setSize(654, 528);
+        pA.setLocation(0, 0);
+        
+        contenido.removeAll();
+        contenido.add(pA, BorderLayout.CENTER);
+        contenido.revalidate();
+        contenido.repaint();
+    }//GEN-LAST:event_botonAgotadosActionPerformed
+
+    private void botonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarActionPerformed
+        PaginaAgregar pAg = new PaginaAgregar();
+        pAg.setSize(654, 528);
+        pAg.setLocation(0, 0);
+        
+        contenido.removeAll();
+        contenido.add(pAg, BorderLayout.CENTER);
+        contenido.revalidate();
+        contenido.repaint();
+    }//GEN-LAST:event_botonAgregarActionPerformed
+
+    private void botonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarActionPerformed
+        PaginaEliminar pE = new PaginaEliminar();
+        pE.setSize(654, 528);
+        pE.setLocation(0, 0);
+        
+        contenido.removeAll();
+        contenido.add(pE, BorderLayout.CENTER);
+        contenido.revalidate();
+        contenido.repaint();
+    }//GEN-LAST:event_botonEliminarActionPerformed
+
+    private void botonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActualizarActionPerformed
+        PaginaActualizar pA = new PaginaActualizar();
+        pA.setSize(654, 528);
+        pA.setLocation(0, 0);
+        
+        contenido.removeAll();
+        contenido.add(pA, BorderLayout.CENTER);
+        contenido.revalidate();
+        contenido.repaint();
+    }//GEN-LAST:event_botonActualizarActionPerformed
+
+    private void botonEstadisticasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEstadisticasActionPerformed
+        PaginaStatistics pSt = new PaginaStatistics();
+        pSt.setSize(654, 528);
+        pSt.setLocation(0, 0);
+        
+        contenido.removeAll();
+        contenido.add(pSt, BorderLayout.CENTER);
+        contenido.revalidate();
+        contenido.repaint();
     }
 }
