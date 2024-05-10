@@ -1,2 +1,8 @@
 # ProyectoFerreteria
-Se trata de una GUI intuitiva que muestra el servicio de una ferreteria
+## Desarrolladores:
+
+> Jaime Andres Noreña - 2359523
+
+> Gabriel Uraza García - 2359594
+
+> Diego Fernando Lenis - 2359540
