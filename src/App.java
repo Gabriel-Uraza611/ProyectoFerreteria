@@ -4,6 +4,13 @@ public class App  extends JFrame
 {   
     //!Declaracion de Objetos
     private javax.swing.JPanel bg;
+    private javax.swing.JButton botonActualizar;
+    private javax.swing.JButton botonAgotados;
+    private javax.swing.JButton botonAgregar;
+    private javax.swing.JButton botonEliminar;
+    private javax.swing.JButton botonEstadisticas;
+    private javax.swing.JButton botonStock;
+    private javax.swing.JButton botonTodos;
     private javax.swing.JLabel labelTitulo;
     private javax.swing.JPanel panelTitulo;
 
@@ -12,6 +19,13 @@ public class App  extends JFrame
         bg = new javax.swing.JPanel();
         panelTitulo = new javax.swing.JPanel();
         labelTitulo = new javax.swing.JLabel();
+        botonTodos = new javax.swing.JButton();
+        botonStock = new javax.swing.JButton();
+        botonAgotados = new javax.swing.JButton();
+        botonAgregar = new javax.swing.JButton();
+        botonEliminar = new javax.swing.JButton();
+        botonActualizar = new javax.swing.JButton();
+        botonEstadisticas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,17 +53,69 @@ public class App  extends JFrame
                 .addGap(16, 16, 16))
         );
 
+        botonTodos.setBackground(new java.awt.Color(255, 196, 226));
+        botonTodos.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        botonTodos.setText("TODOS");
+
+        botonStock.setBackground(new java.awt.Color(255, 196, 226));
+        botonStock.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        botonStock.setText("EN STOCK");
+
+        botonAgotados.setBackground(new java.awt.Color(255, 196, 226));
+        botonAgotados.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        botonAgotados.setText("AGOTADOS");
+
+        botonAgregar.setBackground(new java.awt.Color(255, 196, 226));
+        botonAgregar.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        botonAgregar.setText("AGREGAR");
+
+        botonEliminar.setBackground(new java.awt.Color(255, 196, 226));
+        botonEliminar.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        botonEliminar.setText("ELIMINAR");
+
+        botonActualizar.setBackground(new java.awt.Color(255, 196, 226));
+        botonActualizar.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        botonActualizar.setText("ACTUALIZAR");
+
+        botonEstadisticas.setBackground(new java.awt.Color(255, 196, 226));
+        botonEstadisticas.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
+        botonEstadisticas.setText("STATISTICS");
+
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
         bgLayout.setHorizontalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(panelTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(bgLayout.createSequentialGroup()
+                .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(botonTodos, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonStock, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonAgotados, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonEstadisticas, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bgLayout.createSequentialGroup()
                 .addComponent(panelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 533, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
+                .addComponent(botonTodos, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(botonStock, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(botonAgotados, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(botonAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(botonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(botonActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(botonEstadisticas, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 274, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
