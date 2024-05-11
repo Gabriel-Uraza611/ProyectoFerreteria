@@ -1,6 +1,10 @@
 import javax.swing.JFrame;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
+import java.io.File;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 
 public class App  extends JFrame
 {   
@@ -247,9 +251,37 @@ public class App  extends JFrame
     public static void main(String[] args) throws Exception
     {
         App app = new App();
+        String filepath = "C:\\Users\\guraz\\OneDrive\\Escritorio\\ProyectoFerreteria\\MiniProyectoFerreteria\\src\\mb2.wav";
+        PlayMusic(filepath);
         app.setVisible(true);
     }
 
+    public static void PlayMusic(String location)
+    {
+        try
+        {
+            File musicPath = new File (location);
+
+            if(musicPath.exists())
+            {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+                clip.start();
+            }
+            else
+            {
+                System.out.println("No se pudo encontrar el archivo");
+            }
+
+        }
+        catch(Exception e )
+        {
+            System.out.println(e);
+        }
+    }
+    
+    //!Funcion que permite cambiar el contenido de los paneles presionando botones
     private void showPanel(JPanel p){
         p.setSize(654, 528);
         p.setLocation(0, 0);
@@ -259,7 +291,10 @@ public class App  extends JFrame
         contenido.revalidate();
         contenido.repaint();
     }
-    private void botonTodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonTodosActionPerformed
+
+    //!Accion del boton TODOS
+    private void botonTodosActionPerformed(java.awt.event.ActionEvent evt)
+    {
         PaginaTodos pT = new PaginaTodos();
         pT.setSize(654, 528);
         pT.setLocation(0, 0);
@@ -268,9 +303,11 @@ public class App  extends JFrame
         contenido.add(pT, BorderLayout.CENTER);
         contenido.revalidate();
         contenido.repaint();
-    }//GEN-LAST:event_botonTodosActionPerformed
+    }
 
-    private void botonStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonStockActionPerformed
+    //!Accion del boton STOCK
+    private void botonStockActionPerformed(java.awt.event.ActionEvent evt)
+    {
         PaginaEnStock pS = new PaginaEnStock();
         pS.setSize(654, 528);
         pS.setLocation(0, 0);
@@ -279,9 +316,11 @@ public class App  extends JFrame
         contenido.add(pS, BorderLayout.CENTER);
         contenido.revalidate();
         contenido.repaint();
-    }//GEN-LAST:event_botonStockActionPerformed
+    }
 
-    private void botonAgotadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgotadosActionPerformed
+    //!Accion del boton AGOTADOS
+    private void botonAgotadosActionPerformed(java.awt.event.ActionEvent evt)
+    {
         PaginaAgotados pA = new PaginaAgotados();
         pA.setSize(654, 528);
         pA.setLocation(0, 0);
@@ -290,9 +329,11 @@ public class App  extends JFrame
         contenido.add(pA, BorderLayout.CENTER);
         contenido.revalidate();
         contenido.repaint();
-    }//GEN-LAST:event_botonAgotadosActionPerformed
+    }
 
-    private void botonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarActionPerformed
+    //!Accion del boton AGREGAR
+    private void botonAgregarActionPerformed(java.awt.event.ActionEvent evt) 
+    {
         PaginaAgregar pAg = new PaginaAgregar();
         pAg.setSize(654, 528);
         pAg.setLocation(0, 0);
@@ -301,9 +342,11 @@ public class App  extends JFrame
         contenido.add(pAg, BorderLayout.CENTER);
         contenido.revalidate();
         contenido.repaint();
-    }//GEN-LAST:event_botonAgregarActionPerformed
+    }
 
-    private void botonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarActionPerformed
+    //!Accion del boton ELIMINAR
+    private void botonEliminarActionPerformed(java.awt.event.ActionEvent evt)
+    {
         PaginaEliminar pE = new PaginaEliminar();
         pE.setSize(654, 528);
         pE.setLocation(0, 0);
@@ -312,9 +355,11 @@ public class App  extends JFrame
         contenido.add(pE, BorderLayout.CENTER);
         contenido.revalidate();
         contenido.repaint();
-    }//GEN-LAST:event_botonEliminarActionPerformed
+    }
 
-    private void botonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActualizarActionPerformed
+    //!Accion del boton ACTUALIZAR
+    private void botonActualizarActionPerformed(java.awt.event.ActionEvent evt)
+    {
         PaginaActualizar pA = new PaginaActualizar();
         pA.setSize(654, 528);
         pA.setLocation(0, 0);
@@ -323,9 +368,11 @@ public class App  extends JFrame
         contenido.add(pA, BorderLayout.CENTER);
         contenido.revalidate();
         contenido.repaint();
-    }//GEN-LAST:event_botonActualizarActionPerformed
+    }
 
-    private void botonEstadisticasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEstadisticasActionPerformed
+    //!Accion del boton STATISTICS
+    private void botonEstadisticasActionPerformed(java.awt.event.ActionEvent evt)
+    {
         PaginaStatistics pSt = new PaginaStatistics();
         pSt.setSize(654, 528);
         pSt.setLocation(0, 0);
