@@ -1,6 +1,15 @@
 import javax.swing.JFrame;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
+
+import gui.PaginaActualizar;
+import gui.PaginaAgotados;
+import gui.PaginaAgregar;
+import gui.PaginaEliminar;
+import gui.PaginaEnStock;
+import gui.PaginaStatistics;
+import gui.PaginaTodos;
+
 import java.io.File;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -54,9 +63,9 @@ public class App  extends JFrame
         panelTitulo.setBackground(new java.awt.Color(225, 196, 255));
         panelTitulo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        labelStar2.setIcon(new javax.swing.ImageIcon("C:\\Users\\guraz\\OneDrive\\Escritorio\\ProyectoFerreteria\\MiniProyectoFerreteria\\src\\star.gif")); // NOI18N
+        labelStar2.setIcon(new javax.swing.ImageIcon("MiniProyectoFerreteria\\src\\resources\\star.gif")); // NOI18N
 
-        labelStar1.setIcon(new javax.swing.ImageIcon("C:\\Users\\guraz\\OneDrive\\Escritorio\\ProyectoFerreteria\\MiniProyectoFerreteria\\src\\star.gif")); // NOI18N
+        labelStar1.setIcon(new javax.swing.ImageIcon("MiniProyectoFerreteria\\src\\resources\\star.gif")); // NOI18N
 
         labelTitulo.setFont(new java.awt.Font("Impact", 0, 36)); // NOI18N
         labelTitulo.setText("FERRETERIA MARIO & LUIGY");
@@ -155,9 +164,9 @@ public class App  extends JFrame
             }
         });
 
-        labelMario.setIcon(new javax.swing.ImageIcon("C:\\Users\\guraz\\OneDrive\\Escritorio\\ProyectoFerreteria\\MiniProyectoFerreteria\\src\\luigy.gif")); // NOI18N
+        labelMario.setIcon(new javax.swing.ImageIcon("MiniProyectoFerreteria\\src\\resources\\luigy.gif")); // NOI18N
 
-        labelLuigy.setIcon(new javax.swing.ImageIcon("C:\\Users\\guraz\\OneDrive\\Escritorio\\ProyectoFerreteria\\MiniProyectoFerreteria\\src\\mario.gif")); // NOI18N
+        labelLuigy.setIcon(new javax.swing.ImageIcon("MiniProyectoFerreteria\\src\\resources\\mario.gif")); // NOI18N
 
         contenido.setBackground(new java.awt.Color(255, 254, 196));
         contenido.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -251,7 +260,7 @@ public class App  extends JFrame
     public static void main(String[] args) throws Exception
     {
         App app = new App();
-        String filepath = "C:\\Users\\guraz\\OneDrive\\Escritorio\\ProyectoFerreteria\\MiniProyectoFerreteria\\src\\mb2.wav";
+        String filepath = "MiniProyectoFerreteria\\src\\resources\\mb2.wav";
         PlayMusic(filepath);
         app.setVisible(true);
     }
