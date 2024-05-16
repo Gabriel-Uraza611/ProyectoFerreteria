@@ -1,31 +1,28 @@
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
-import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import java.awt.BorderLayout;
-import java.awt.Button;
 import java.awt.Color;
-
 import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.GridLayout;
-import java.awt.Insets;
 import java.awt.Toolkit;
-import java.awt.datatransfer.FlavorListener;
-import java.io.File;
 
 public class VsCode extends JFrame {
     Container MainContainer;
     JPanel ToolBar;
+        JPanel ToolBarBox1;
+        JPanel ToolBarBox2;
+            RoundedTextField SearchBar;
+        JPanel ToolBarBox3;
 
     JPanel StatusBar;
+        JButton RmtWinBtt;
+        JButton WarningsBtt;
+        JPanel Space;
 
     JPanel MidBar;
 
@@ -50,8 +47,32 @@ public class VsCode extends JFrame {
         setLayout(new BorderLayout());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         MainContainer = getContentPane();
+
         ToolBar = new JPanel();
+        ToolBar.setLayout(new BoxLayout(ToolBar, BoxLayout.X_AXIS));
+            ToolBarBox1 = new JPanel();
+            ToolBarBox2 = new JPanel();
+                SearchBar = new RoundedTextField(50);
+                SearchBar.setBackground(DefaultBackgroundColor);
+                SearchBar.setForeground(SearchBarForeGround);
+            ToolBarBox3 = new JPanel();
+
         StatusBar = new JPanel();
+        StatusBar.setLayout(new BoxLayout(StatusBar, BoxLayout.X_AXIS));
+            RmtWinBtt = new JButton(new ImageIcon("../resources/rmtwin.png"));
+            RmtWinBtt.setBackground(new Color(Color.TRANSLUCENT));
+            RmtWinBtt.setOpaque(true);
+            RmtWinBtt.setContentAreaFilled(false);
+            RmtWinBtt.setBorderPainted(false);
+
+            WarningsBtt = new JButton(new ImageIcon("../resources/warnings.png"));
+            WarningsBtt.setBackground(new Color(Color.TRANSLUCENT));
+            WarningsBtt.setOpaque(true);
+            WarningsBtt.setContentAreaFilled(false);
+            WarningsBtt.setBorderPainted(false);
+
+            Space = new JPanel();
+            Space.setBackground(DefaultBackgroundColor);
 
         MidBar = new JPanel();
         MidBar.setLayout(new BoxLayout(MidBar, BoxLayout.X_AXIS));
@@ -59,7 +80,7 @@ public class VsCode extends JFrame {
         ExtensionBar = new JPanel();
         ExtensionBar.setLayout(new BoxLayout(ExtensionBar, BoxLayout.Y_AXIS));
             ButtonContainer = new JPanel();
-            BoxLayout blt = new BoxLayout(ButtonContainer, BoxLayout.Y_AXIS);
+            final BoxLayout blt = new BoxLayout(ButtonContainer, BoxLayout.Y_AXIS);
             ButtonContainer.setLayout(blt);
             ButtonContainer.setBackground(DefaultBackgroundColor);
                 FileBtt = new JButton( new ImageIcon("../resources/file.png"));
@@ -104,8 +125,8 @@ public class VsCode extends JFrame {
 
             ButtonContainer2 = new JPanel();
             ButtonContainer2.setBackground(DefaultBackgroundColor);
-            ButtonContainer2.setLayout(new BoxLayout(ButtonContainer2, BoxLayout.Y_AXIS));
-            ButtonContainer2.setPreferredSize(new Dimension(48, 200));
+            ButtonContainer2.setPreferredSize(new Dimension(48,110));
+            ButtonContainer2.setLayout(new BoxLayout(ButtonContainer2, BoxLayout.PAGE_AXIS));
                 AcountBtt = new JButton( new ImageIcon("../resources/accounts.png"));
                 AcountBtt.setBackground(new Color(Color.TRANSLUCENT));
                 AcountBtt.setOpaque(true);
@@ -135,6 +156,12 @@ public class VsCode extends JFrame {
         ButtonContainer2.add(AcountBtt);
         ButtonContainer2.add(SettingsBtt);
 
+        ToolBarBox2.add(SearchBar);
+
+        ToolBar.add(ToolBarBox1);
+        ToolBar.add(ToolBarBox2);
+        ToolBar.add(ToolBarBox3);
+
         MidBar.add(ExtensionBar);
             ExtensionBar.add(ButtonContainer);
             ExtensionBar.add(SpaceContainer);
@@ -142,15 +169,26 @@ public class VsCode extends JFrame {
         MidBar.add(SideBar);
         MidBar.add(WorkSpace);
 
+        StatusBar.add(RmtWinBtt);
+        StatusBar.add(WarningsBtt);
+        StatusBar.add(Space);
+
 
         ToolBar.setBackground(DefaultBackgroundColor);
+            ToolBarBox1.setBackground(DefaultBackgroundColor);
+            ToolBarBox2.setBackground(DefaultBackgroundColor);
+                SearchBar.setPreferredSize(new Dimension(640, 24));
+            ToolBarBox3.setBackground(DefaultBackgroundColor);
         StatusBar.setBackground(DefaultBackgroundColor);
         ExtensionBar.setBackground(DefaultBackgroundColor);
         SideBar.setBackground(DefaultBackgroundColor);
         WorkSpace.setBackground(WorkSpaceBackgroundColor);
 
         ToolBar.setPreferredSize(new Dimension((int)Short.MAX_VALUE, 35));
-        StatusBar.setPreferredSize(new Dimension((int)Short.MAX_VALUE, 35));
+            ToolBarBox1.setPreferredSize(new Dimension(660, 35));
+            ToolBarBox2.setPreferredSize(new Dimension(660, 35));
+            ToolBarBox3.setPreferredSize(new Dimension(660, 35));
+        StatusBar.setPreferredSize(new Dimension((int)Short.MAX_VALUE, 22));
         ExtensionBar.setPreferredSize(new Dimension( 48, (int)Short.MAX_VALUE));
         SideBar.setPreferredSize(new Dimension(300, (int)Short.MAX_VALUE));
         WorkSpace.setPreferredSize(new Dimension(this.getWidth(), (int)Short.MAX_VALUE));
@@ -166,12 +204,20 @@ public class VsCode extends JFrame {
         setResizable(false);
     }
 
-    public static void main(String[] args) {
-        VsCode code = new VsCode();
+    public static void main(final String[] args) {
+        final VsCode code = new VsCode();
         System.out.println(Toolkit.getDefaultToolkit().getScreenSize());
     }
 
-    private Color DefaultBackgroundColor = new Color(0x181818);
-    private Color WorkSpaceBackgroundColor= new Color(0x1F1F1F);
-    private Color BorderLineColor = new Color(0x2B2B2B);
+    private void paintSearchBarColor() {
+        final String openTag = "<<textColor [“#F08080”]>>";
+        final String closeTag = "<</textColor>>";
+        SearchBar.setText(openTag + SearchBar.getText() + closeTag);
+    }
+
+    private final Color DefaultBackgroundColor = new Color(0x181818);
+    private final Color WorkSpaceBackgroundColor= new Color(0x1F1F1F);
+    private final Color BorderLineColor = new Color(0x2B2B2B);
+    private final Color SearchBarBckgrnd = new Color(0x2A2A2A);
+    private final Color SearchBarForeGround = new Color(0xAAAAAA);
 }
