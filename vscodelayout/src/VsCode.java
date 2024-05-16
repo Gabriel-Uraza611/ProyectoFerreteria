@@ -3,13 +3,16 @@ import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.awt.Font;
 
 public class VsCode extends JFrame {
     Container MainContainer;
@@ -25,22 +28,24 @@ public class VsCode extends JFrame {
         JPanel Space;
 
     JPanel MidBar;
-
-    JPanel WorkSpace;
-
-    JPanel ExtensionBar;
-        JPanel ButtonContainer;
-            JButton FileBtt;
-            JButton SearchBtt;
-            JButton GitBtt;
-            JButton DBBtt;
-            JButton ExtensionBtt;
-            JButton Bttt;
-        JPanel SpaceContainer;
-        JPanel ButtonContainer2;
-            JButton AcountBtt;
-            JButton SettingsBtt;
-    JPanel SideBar;
+        JPanel ExtensionBar;
+            JPanel ButtonContainer;
+                JButton FileBtt;
+                JButton SearchBtt;
+                JButton GitBtt;
+                JButton DBBtt;
+                JButton ExtensionBtt;
+                JButton Bttt;
+            JPanel SpaceContainer;
+            JPanel ButtonContainer2;
+                JButton AcountBtt;
+                JButton SettingsBtt;
+        JPanel SideBar;
+            JPanel HeaderContainer;
+                JLabel Header;
+            JPanel SideBarContent;
+        JPanel WorkSpace;
+            JTextArea CodeArea;
 
     public VsCode() {
         setSize(1920, 1000);
@@ -53,7 +58,7 @@ public class VsCode extends JFrame {
             ToolBarBox1 = new JPanel();
             ToolBarBox2 = new JPanel();
                 SearchBar = new RoundedTextField(50);
-                SearchBar.setBackground(DefaultBackgroundColor);
+                SearchBar.setBackground(SearchBarBckgrnd);
                 SearchBar.setForeground(SearchBarForeGround);
             ToolBarBox3 = new JPanel();
 
@@ -140,7 +145,25 @@ public class VsCode extends JFrame {
                 SettingsBtt.setBorderPainted(false);
 
         SideBar = new JPanel();
+        SideBar.setLayout(new BorderLayout());
+            HeaderContainer = new JPanel();
+            HeaderContainer.setBackground(DefaultBackgroundColor);
+            HeaderContainer.setBorder(BorderFactory.createLineBorder(BorderLineColor));
+                Header = new JLabel("Explorer", JLabel.LEFT);
+                Header.setForeground(SearchBarForeGround);
+            SideBarContent = new JPanel();
+            SideBarContent.setBackground(DefaultBackgroundColor);
+
         WorkSpace = new JPanel();
+        WorkSpace.setLayout(new BorderLayout());
+            CodeArea = new JTextArea();
+            CodeArea.setBackground(new Color(Color.TRANSLUCENT));
+            CodeArea.setForeground(SearchBarForeGround);
+            CodeArea.setOpaque(false);
+            {
+                Font f = CodeArea.getFont();
+                CodeArea.setFont(new Font(f.getName(), f.getStyle(), 20));
+            }
 
         MainContainer.add(ToolBar, BorderLayout.NORTH);
         MainContainer.add(MidBar, BorderLayout.CENTER);
@@ -167,7 +190,11 @@ public class VsCode extends JFrame {
             ExtensionBar.add(SpaceContainer);
             ExtensionBar.add(ButtonContainer2);
         MidBar.add(SideBar);
+            SideBar.add(HeaderContainer, BorderLayout.NORTH);
+                HeaderContainer.add(Header);
+            SideBar.add(SideBarContent, BorderLayout.CENTER);
         MidBar.add(WorkSpace);
+            WorkSpace.add(CodeArea);
 
         StatusBar.add(RmtWinBtt);
         StatusBar.add(WarningsBtt);
@@ -183,6 +210,7 @@ public class VsCode extends JFrame {
         ExtensionBar.setBackground(DefaultBackgroundColor);
         SideBar.setBackground(DefaultBackgroundColor);
         WorkSpace.setBackground(WorkSpaceBackgroundColor);
+
 
         ToolBar.setPreferredSize(new Dimension((int)Short.MAX_VALUE, 35));
             ToolBarBox1.setPreferredSize(new Dimension(660, 35));
@@ -206,13 +234,6 @@ public class VsCode extends JFrame {
 
     public static void main(final String[] args) {
         final VsCode code = new VsCode();
-        System.out.println(Toolkit.getDefaultToolkit().getScreenSize());
-    }
-
-    private void paintSearchBarColor() {
-        final String openTag = "<<textColor [“#F08080”]>>";
-        final String closeTag = "<</textColor>>";
-        SearchBar.setText(openTag + SearchBar.getText() + closeTag);
     }
 
     private final Color DefaultBackgroundColor = new Color(0x181818);
