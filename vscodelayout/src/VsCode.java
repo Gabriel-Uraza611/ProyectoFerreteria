@@ -11,7 +11,6 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.Toolkit;
 import java.awt.Font;
 
 public class VsCode extends JFrame {
@@ -64,13 +63,13 @@ public class VsCode extends JFrame {
 
         StatusBar = new JPanel();
         StatusBar.setLayout(new BoxLayout(StatusBar, BoxLayout.X_AXIS));
-            RmtWinBtt = new JButton(new ImageIcon("../resources/rmtwin.png"));
+            RmtWinBtt = new JButton(new ImageIcon("./vscodelayout/resources/rmtwin.png"));
             RmtWinBtt.setBackground(new Color(Color.TRANSLUCENT));
             RmtWinBtt.setOpaque(true);
             RmtWinBtt.setContentAreaFilled(false);
             RmtWinBtt.setBorderPainted(false);
 
-            WarningsBtt = new JButton(new ImageIcon("../resources/warnings.png"));
+            WarningsBtt = new JButton(new ImageIcon("./vscodelayout/resources/warnings.png"));
             WarningsBtt.setBackground(new Color(Color.TRANSLUCENT));
             WarningsBtt.setOpaque(true);
             WarningsBtt.setContentAreaFilled(false);
@@ -88,37 +87,37 @@ public class VsCode extends JFrame {
             final BoxLayout blt = new BoxLayout(ButtonContainer, BoxLayout.Y_AXIS);
             ButtonContainer.setLayout(blt);
             ButtonContainer.setBackground(DefaultBackgroundColor);
-                FileBtt = new JButton( new ImageIcon("../resources/file.png"));
+                FileBtt = new JButton( new ImageIcon("./vscodelayout/resources/file.png"));
                 FileBtt.setBackground(new Color(Color.TRANSLUCENT));
                 FileBtt.setOpaque(true);
                 FileBtt.setContentAreaFilled(false);
                 FileBtt.setBorderPainted(false);
 
-                SearchBtt = new JButton( new ImageIcon("../resources/search.png"));
+                SearchBtt = new JButton( new ImageIcon("./vscodelayout/resources/search.png"));
                 SearchBtt.setBackground(new Color(Color.TRANSLUCENT));
                 SearchBtt.setOpaque(true);
                 SearchBtt.setContentAreaFilled(false);
                 SearchBtt.setBorderPainted(false);
 
-                GitBtt = new JButton( new ImageIcon("../resources/gitthree.png"));
+                GitBtt = new JButton( new ImageIcon("./vscodelayout/resources/gitthree.png"));
                 GitBtt.setBackground(new Color(Color.TRANSLUCENT));
                 GitBtt.setOpaque(true);
                 GitBtt.setContentAreaFilled(false);
                 GitBtt.setBorderPainted(false);
 
-                DBBtt = new JButton( new ImageIcon("../resources/debug.png"));
+                DBBtt = new JButton( new ImageIcon("./vscodelayout/resources/debug.png"));
                 DBBtt.setBackground(new Color(Color.TRANSLUCENT));
                 DBBtt.setOpaque(true);
                 DBBtt.setContentAreaFilled(false);
                 DBBtt.setBorderPainted(false);
 
-                ExtensionBtt = new JButton( new ImageIcon("../resources/extensions.png"));
+                ExtensionBtt = new JButton( new ImageIcon("./vscodelayout/resources/extensions.png"));
                 ExtensionBtt.setBackground(new Color(Color.TRANSLUCENT));
                 ExtensionBtt.setOpaque(true);
                 ExtensionBtt.setContentAreaFilled(false);
                 ExtensionBtt.setBorderPainted(false);
 
-                Bttt = new JButton( new ImageIcon("../resources/bttt.png"));
+                Bttt = new JButton( new ImageIcon("./vscodelayout/resources/bttt.png"));
                 Bttt.setBackground(new Color(Color.TRANSLUCENT));
                 Bttt.setOpaque(true);
                 Bttt.setContentAreaFilled(false);
@@ -132,13 +131,13 @@ public class VsCode extends JFrame {
             ButtonContainer2.setBackground(DefaultBackgroundColor);
             ButtonContainer2.setPreferredSize(new Dimension(48,110));
             ButtonContainer2.setLayout(new BoxLayout(ButtonContainer2, BoxLayout.PAGE_AXIS));
-                AcountBtt = new JButton( new ImageIcon("../resources/accounts.png"));
+                AcountBtt = new JButton( new ImageIcon("./vscodelayout/resources/accounts.png"));
                 AcountBtt.setBackground(new Color(Color.TRANSLUCENT));
                 AcountBtt.setOpaque(true);
                 AcountBtt.setContentAreaFilled(false);
                 AcountBtt.setBorderPainted(false);
 
-                SettingsBtt = new JButton( new ImageIcon("../resources/settings.png"));
+                SettingsBtt = new JButton( new ImageIcon("./vscodelayout/resources/settings.png"));
                 SettingsBtt.setBackground(new Color(Color.TRANSLUCENT));
                 SettingsBtt.setOpaque(true);
                 SettingsBtt.setContentAreaFilled(false);
@@ -229,7 +228,6 @@ public class VsCode extends JFrame {
         WorkSpace.setBorder(BorderFactory.createLineBorder(BorderLineColor));
 
         setVisible(true);
-        setResizable(false);
     }
 
     public static void main(final String[] args) {
