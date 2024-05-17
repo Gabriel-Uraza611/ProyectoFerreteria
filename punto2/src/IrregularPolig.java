@@ -1,5 +1,3 @@
-import javax.swing.JFrame;
-
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
@@ -45,7 +43,7 @@ public class IrregularPolig extends Lienzo implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        Points.add(e.getPoint());
+        Points.add(e.getLocationOnScreen());
         repaint();
     }
 

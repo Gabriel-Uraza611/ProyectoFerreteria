@@ -5,7 +5,6 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
-import javax.swing.JFrame;
 
 public class Lines extends Lienzo implements MouseListener {
 
@@ -44,7 +43,7 @@ public class Lines extends Lienzo implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        Points.add(e.getPoint());
+        Points.add(e.getLocationOnScreen());
         repaint();
     }
 

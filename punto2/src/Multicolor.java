@@ -1,7 +1,6 @@
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
-import java.awt.Toolkit;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -9,8 +8,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-import javax.sound.sampled.Line;
-import javax.swing.JFrame;
 
 public class Multicolor extends Lienzo implements MouseListener {
 
@@ -53,7 +50,7 @@ public class Multicolor extends Lienzo implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        Points.add(e.getPoint());
+        Points.add(e.getLocationOnScreen());
         repaint();
     }
 
