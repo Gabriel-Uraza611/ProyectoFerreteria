@@ -1,3 +1,4 @@
+import javax.swing.JFrame;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -12,6 +13,7 @@ public class IrregularPolig extends Lienzo implements MouseListener {
     
     public IrregularPolig() {
         super();
+        setTitle("Haz click para dibujar un poligono irregular");
         Points = new ArrayList<Point>();
         lienzo.addMouseListener(this);
     }

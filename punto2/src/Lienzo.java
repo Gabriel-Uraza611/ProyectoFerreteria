@@ -1,6 +1,4 @@
 import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.Graphics;
 import java.awt.Color;
 
 import javax.swing.BorderFactory;
@@ -16,7 +14,6 @@ public class Lienzo extends JFrame {
     public Lienzo() {
         setSize(1600,920);
         setVisible(true);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         initComponents();
     }
@@ -30,10 +27,4 @@ public class Lienzo extends JFrame {
         lienzo.setBorder(BorderFactory.createLineBorder(new Color(0x000000)));
         content.add(lienzo);
     }
-
-    public void paintComponent(Graphics g) {
-
-    }
-
-    
 }

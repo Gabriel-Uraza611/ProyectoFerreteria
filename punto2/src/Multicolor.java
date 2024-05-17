@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.Random;
 
 import javax.sound.sampled.Line;
+import javax.swing.JFrame;
 
 public class Multicolor extends Lienzo implements MouseListener {
 
@@ -18,6 +19,7 @@ public class Multicolor extends Lienzo implements MouseListener {
     
     public Multicolor() {
         super();
+        setTitle("Haz click para dibujar lineas Multicolor");
         Points = new ArrayList<Point>();
         Lines = new HashMap<Integer, Color>();
         lienzo.addMouseListener(this);

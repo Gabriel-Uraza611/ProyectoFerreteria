@@ -1,2 +1,2 @@
 cd ../bin/
-java App
+java Main

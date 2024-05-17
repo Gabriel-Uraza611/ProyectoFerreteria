@@ -5,6 +5,8 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
+import javax.swing.JFrame;
+
 public class Lines extends Lienzo implements MouseListener {
 
     ArrayList<Point> Points;
@@ -13,6 +15,7 @@ public class Lines extends Lienzo implements MouseListener {
         super();
         Points = new ArrayList<Point>();
         lienzo.addMouseListener(this);
+        setTitle("Haz click para dibujar lineas");
     }
 
     public void paint(Graphics g) {
@@ -20,7 +23,6 @@ public class Lines extends Lienzo implements MouseListener {
 
         g.setPaintMode();
         g.setColor(Color.BLACK);
-        g.drawLine(0,0, 100, 100);
 
         for (int i = 0; i < Points.size() && Points.size() % 2 == 0; i+=2) {
             g.drawLine( (int)Points.get(i).getX(), (int)Points.get(i).getY(), 
