@@ -1,47 +1,45 @@
 package gui;
+import java.awt.Label;
+import java.util.ArrayList;
+import java.util.concurrent.ForkJoinPool;
+
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.BoxLayout;
 
-public class PaginaAgotados extends JPanel{
-    //!Declaracion De Variables
-    private javax.swing.JPanel bg;
-    private javax.swing.JLabel jLabel1;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
 
-    public PaginaAgotados()
-    {
-        bg = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+import gui.Product;
 
+public class PaginaAgotados extends JPanel {
+
+    private JPanel bg;
+
+    public PaginaAgotados() {
+        bg = new JPanel();
         bg.setBackground(new java.awt.Color(255, 254, 196));
 
-        jLabel1.setFont(new java.awt.Font("Impact", 0, 48)); // NOI18N
-        jLabel1.setText("PAGINA AGOTADOS");
+        for (Product product : Product.products) {
 
-        javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
-        bg.setLayout(bgLayout);
-        bgLayout.setHorizontalGroup(
-            bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                .addContainerGap(195, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(151, 151, 151))
-        );
-        bgLayout.setVerticalGroup(
-            bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bgLayout.createSequentialGroup()
-                .addGap(154, 154, 154)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(281, Short.MAX_VALUE))
-        );
+            JLabel label = new JLabel(product.getName() + "/ :  " +
+                                       product.getDescript() + "/ : $" +
+                                       product.getPrice() + "/STOCK :" +
+                                       product.getAmount());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+            if (Integer.parseInt(product.getAmount()) <= 0) {
+                
+                bg.add(label);
+            }
+                
+        }
+
+        bg.setLayout(new GridLayout(3, 1));
+
+        setLayout(new BorderLayout());
+
+        add(new JScrollPane(bg), BorderLayout.CENTER);
     }
 }

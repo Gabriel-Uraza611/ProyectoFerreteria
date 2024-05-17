@@ -10,6 +10,8 @@ import gui.PaginaEnStock;
 import gui.PaginaStatistics;
 import gui.PaginaTodos;
 
+import gui.Product;
+
 import java.io.File;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -36,6 +38,7 @@ public class App  extends JFrame
 
     public App()
     {   
+
         setTitle("Ferreteria: Mario & Luigy");
         setLocation(360,70);
         setResizable(false);
