@@ -1,48 +1,30 @@
 package gui;
+import java.awt.Label;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.concurrent.ForkJoinPool;
+
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.BoxLayout;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+
+import gui.Product;
+import java.util.Scanner;
+
+import javax.swing.JTextField;
 
 public class PaginaEliminar extends JPanel {
+    int n;
+    JLabel label = new JLabel("Por favor ingresa el indice del producto que deseas eliminar, se encuentra disponible en la pestaña todos");
+    JTextField textField = new JTextField();
+    
 
-    //!Declaracion de variables
-    private javax.swing.JPanel bg;
-    private javax.swing.JLabel jLabel1;
-
-    public PaginaEliminar()
-    {
-        bg = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-
-        bg.setBackground(new java.awt.Color(255, 254, 196));
-
-        jLabel1.setFont(new java.awt.Font("Impact", 0, 48)); // NOI18N
-        jLabel1.setText("PAGINA ELIMINAR");
-
-        javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
-        bg.setLayout(bgLayout);
-        bgLayout.setHorizontalGroup(
-            bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bgLayout.createSequentialGroup()
-                .addContainerGap(181, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(151, 151, 151))
-        );
-        bgLayout.setVerticalGroup(
-            bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bgLayout.createSequentialGroup()
-                .addGap(154, 154, 154)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(276, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+    public PaginaEliminar(){
+        
     } 
 }
