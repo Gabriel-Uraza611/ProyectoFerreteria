@@ -1,3 +1,4 @@
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
@@ -5,11 +6,11 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
-public class Lines extends Lienzo implements MouseListener {
+public class IrregularPolig extends Lienzo implements MouseListener {
 
     ArrayList<Point> Points;
     
-    public Lines() {
+    public IrregularPolig() {
         super();
         Points = new ArrayList<Point>();
         lienzo.addMouseListener(this);
@@ -17,14 +18,14 @@ public class Lines extends Lienzo implements MouseListener {
 
     public void paint(Graphics g) {
         if (Points.size() <= 1) return;
-
+        super.paint(g);
         g.setPaintMode();
         g.setColor(Color.BLACK);
-        g.drawLine(0,0, 100, 100);
 
-        for (int i = 0; i < Points.size() && Points.size() % 2 == 0; i+=2) {
+        for (int i = 0; i < Points.size(); i++) {
+            int index = (i+1) % Points.size();
             g.drawLine( (int)Points.get(i).getX(), (int)Points.get(i).getY(), 
-                        (int)Points.get(i+1).getX(), (int)Points.get(i+1).getY());
+                        (int)Points.get(index).getX(), (int)Points.get(index).getY());
         }
     }
 
